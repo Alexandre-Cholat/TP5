@@ -2,7 +2,7 @@
 #include <vector>
 #include "subset.hpp"
 #include <bit>
-
+#include "ElementsIterator.hpp"
 
 subset::Subset::Subset(size_t k, size_t n): _sub_size(k), _super_size(n), _representation((1ULL<<n) - 1ULL){
 
@@ -120,12 +120,12 @@ void subset::Subset::minus(const Subset& other){
 
 }
 
-ElementsIterator subset::Subset::begin(){
+subset::ElementsIterator subset::Subset::begin(){
     ElementsIterator it = ElementsIterator(*this);
     return it;
 }
 
-ElementsIterator subset::Subset::end(){
+subset::ElementsIterator subset::Subset::end(){
     // create dummy end iterator where currentElem = _sub_size
     return ElementsIterator(*this, _sub_size);
 }

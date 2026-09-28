@@ -13,19 +13,22 @@ class ElementsIterator{
     size_t currentElem;
     Subset& parent;
 
+    // private constructor for end()
     ElementsIterator(Subset& parent_ref, type_t end);
+
+    friend class Subset;
 
     public:
     ElementsIterator(Subset& parent_ref);
-    ~ElementsIterator();
+    ~ElementsIterator()= default;
 
     //size_t get_current_idx(){return currentElem};
 
-    friend void operator++();
+    void operator++();
 
     //equivalent to get_current_idx
-    friend size_t operator*(){return currentElem;};
+    size_t operator*() const {return currentElem;};
 
     friend bool operator!=(ElementsIterator x);
 
-}
+};

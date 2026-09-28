@@ -20,10 +20,14 @@ ElementsIterator::ElementsIterator(Subset& parent_ref, type_t end): parent(paren
 
 void ElementsIterator::operator++(){
     currentElem++;
+    while (!parent.contains(currentElem) || currentElem < parent.getSubSize() ) {
+            currentElem++;
+        }
 
 }
 
 
 bool ElementsIterator::operator!=(ElementsIterator x){
-    return (currentElem == x.currentElem) && (parent.contains(x.parent));
+    // return (currentElem == x.currentElem) && (parent.contains(x.parent));
+    return (currentElem != x.currentElem) || (&parent != &x.parent);
 }

@@ -217,4 +217,5 @@ CMakeFiles/my_project.dir/src/subset.cpp.o: \
  /usr/include/c++/15/bits/stl_vector.h \
  /usr/include/c++/15/bits/stl_bvector.h \
  /usr/include/c++/15/bits/vector.tcc \
- /home/c/cholata/Documents/Programming/TP5/include/subset.hpp
+ /home/c/cholata/Documents/Programming/TP5/include/subset.hpp \
+ /home/c/cholata/Documents/Programming/TP5/include/ElementsIterator.hpp

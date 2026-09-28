@@ -3,7 +3,7 @@
 #include <vector>
 
 namespace subset{
-    
+
     // FORWARD DECLARATION
     // Now the compiler allows this return type
     class ElementsIterator;
@@ -49,7 +49,9 @@ namespace subset{
             ElementsIterator end();
 
 
-};
+    };
+
+    std::ostream& operator<<(std::ostream& os, const Subset& s);
 
 
 
