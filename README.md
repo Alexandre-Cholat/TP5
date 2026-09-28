@@ -1,73 +1,27 @@
-# Cmake Project Template
+# Subset Library
 
-This is a simple CMake project template that demonstrates how to set up a basic C++ project using CMake as the build system. It includes a sample source file and a CMake configuration file.
+In this TP, you will build a small C++ library for manipulating subsets.
 
-## Project Structure
-```
-CmakeProjectTemplate/
-├── CMakeLists.txt
-|── include/
-│   └── utils.hpp
-├── src/
-|   ├── utils.cpp    
-│   └── main.cpp
-├── tests/
-|   └── tests.cpp
-└── README.md
+The main goal is to enable efficient iteration over subsets of a given size. For example:
+
+```cpp
+for (const auto& subset : subsets) {
+    // Perform operations on subset
+}
 ```
 
-All source files are located in the `src` directory, header files in the `include` directory, and test files in the `tests` directory.
+This capability is essential for many exponential-time algorithms, including the Held–Karp algorithm for the Traveling Salesman Problem, which you will implement during this project.
 
-## Getting Started
+Such loops appear in many exponential-time algorithms, where even small inefficiencies can become prohibitive. We want our iterator to generate subsets in optimal time, avoiding redundant work such as recomputing all `2^n` subsets at each step.
 
-### Prerequisites
+Examples of algorithms that can benefit from efficient subset iteration include:
 
-- CMake (version 3.10 or higher)
-- A C++ compiler (e.g., GCC, Clang, MSVC)
-- Google Test framework for unit testing
+- Branch-and-bound algorithms, which are widely used to solve combinatorial problems.
+- Backtracking algorithms for constraint satisfaction problems.
+- Exponential dynamic programming algorithms, such as the Held–Karp algorithm.
 
-### Building the Project
+## Pedagogical Objectives
 
-Run the following commands in your terminal:
-
-```bash
-mkdir build
-cd build
-cmake ..
-make
-```
-
-Now the project should be built, and the executable will be located in the `build` directory.
-Run the following command to execute the application:
-
-```bash
-./build/main
-``` 
-
-Alternatively, after building, you can compile and run the application directly from the root directory using:
-
-```bash
-cmake --build build
-./build/main
-```
-
-### Building and Running Tests
-
-To build and run the tests, use the following commands:
-
-```bash
-cd build
-cmake -DBUILD_TESTS=ON ..
-make
-./build/tests
-```
-This will compile the test files and run the tests using the Google Test framework.
-
-### Debugging
-
-To build the project in debug mode, you can specify the build type when running CMake:
-
-```bash
-cmake -DCMAKE_BUILD_TYPE=Debug ..
-```
-
+- Practice C++ class design and implementation.
+- Learn how to create custom iterators in C++.
+- Write code that is interoperable with the C++ Standard Template Library (STL).
