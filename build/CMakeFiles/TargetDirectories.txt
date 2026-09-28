@@ -1,0 +1,4 @@
+/home/c/cholata/Documents/Programming/TP5/build/CMakeFiles/my_project.dir
+/home/c/cholata/Documents/Programming/TP5/build/CMakeFiles/main.dir
+/home/c/cholata/Documents/Programming/TP5/build/CMakeFiles/edit_cache.dir
+/home/c/cholata/Documents/Programming/TP5/build/CMakeFiles/rebuild_cache.dir
